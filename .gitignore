@@ -1,0 +1,38 @@
+# === 编译生成的二进制文件 (Executable) ===
+main
+test.e
+# 匹配所有没有后缀的可执行文件（可选，慎用）
+# *
+# !*.* # === 编译中间产物 (Objects) ===
+*.o
+*.obj
+*.so
+*.a
+*.lib
+
+# === 库文件与外部依赖 (External Libs) ===
+# 如果 hnswlib 是通过 git submodule 管理的，不需要 ignore
+# 如果是手动下载的且很大，可以取消下面注释
+# hnswlib/
+
+# === 数据文件与测试文件 (Data) ===
+# 向量数据集通常很大 (DEEP100K)，不建议推送到 GitHub
+files/
+*.fvecs
+*.ivecs
+*.bin
+
+# === 脚本输出与日志 (Logs) ===
+*.log
+*.out
+
+# === 操作系统与 IDE 特有文件 ===
+.DS_Store
+.vscode/
+.idea/
+cmake-build-debug/
+
+# === 临时文件 ===
+*.swp
+*~
+.nfs*
